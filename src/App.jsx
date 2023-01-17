@@ -1,18 +1,29 @@
 import React from 'react'
+import Header from './components/Header'
 import Die from './components/Die'
 
 
-function App() {
 
-  const a = [1,2,3,4,5,6,7,8,9]
 
-  const dices =(a.map(item=>{
-    return <Die value={item} />
-  }))
-  
+function App(){
   return (
     <div className="App">
-      {dices}
+    <Header title="Play this game" description="Click the button to roll the dice"/>
+      <div className="container">
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      <Die value="1"/>
+      </div>
+      <div className="button-div">
+      <button className="button">Roll</button>
+      </div>
     </div>
   )
 }

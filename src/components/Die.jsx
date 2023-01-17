@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Die(props){
-    return <div>
+    return <div className="die">
         {props.value}
     </div>
 }
