@@ -23,10 +23,10 @@ https://user-images.githubusercontent.com/99909551/213649468-c116fdbf-9677-4be0-
 ## Screenshots
 
 - this is the UI of the game:
-- ![Screenshot 2023-01-20 at 12-43-41 Number Handler Game](https://user-images.githubusercontent.com/99909551/213649301-345311b1-47c5-4fd2-9d45-ea7017021c28.png)
+ ![Screenshot 2023-01-20 at 12-43-41 Number Handler Game](https://user-images.githubusercontent.com/99909551/213649301-345311b1-47c5-4fd2-9d45-ea7017021c28.png)
 
 - when you win the game:-
-- ![Screenshot 2023-01-20 at 12-44-58 Number Handler Game](https://user-images.githubusercontent.com/99909551/213649413-15bb1916-bfd6-4e9c-8a35-e1d72d212438.png)
+ ![Screenshot 2023-01-20 at 12-44-58 Number Handler Game](https://user-images.githubusercontent.com/99909551/213649413-15bb1916-bfd6-4e9c-8a35-e1d72d212438.png)
 
 ## Installation
 
