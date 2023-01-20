@@ -33,7 +33,7 @@ https://user-images.githubusercontent.com/99909551/213649468-c116fdbf-9677-4be0-
 Install my-project with npm
 
 ```bash
-  npm install https://github.com/TheMohit2003/ReactJS-number-game.git
+  git clone https://github.com/TheMohit2003/ReactJS-number-game.git
   cd ReactJS-number-game
   npm install
   npm run dev
