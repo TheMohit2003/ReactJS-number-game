@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from './components/Header'
 import Die from './components/Die'
+import Footer from './components/Footer'
 import { nanoid } from 'nanoid'
+import Confetti from 'react-confetti'
 
 function App(){
 
@@ -20,6 +22,19 @@ function App(){
 
   const[array,setArray]=React.useState(generateDieArray());
   const[win,setWin]=React.useState(false);
+
+  //UseEffect hook:
+
+  React.useEffect(()=>{
+    
+    const allHeld = array.every(die => die.isHeld)
+        const firstValue = array[0].value
+        const allSameValue = array.every(die => die.value === firstValue)
+        if (allHeld && allSameValue) {
+            setWin(true)
+            console.log("You won!")
+        }
+  },[array])
 
   //the function generateDie generates a die method.
   function generateDie(){
@@ -48,7 +63,7 @@ function App(){
   } 
   
   //the below function called buttonClickHandler is triggered when the button is clicked.
-  function buttonClickHandler(){
+  function buttonClickHandler_NotWin(){
     const newArray = array.map(Object=>{
       if(Object.isHeld==true){
         return Object
@@ -58,23 +73,32 @@ function App(){
     })
    setArray(newArray);
   }
+
+  //function triggeres when the win hook is set true:
+  function buttonClickHandler_Win(){
+    setArray(generateDieArray())
+    setWin(false)
+  }
+
   //the below function returns an die element and each having a value of array generated using 
   // generateDieArray function .
   const dieArray = array.map(item=>{
-    return <Die value={item.value} click={()=>handleDieClick(item)} key={item.id}/>
+    return <Die value={item.value} click={()=>handleDieClick(item)} key={item.id} isHeld={item.isHeld}/>
   })
 
 
 
   return (
     <div className="App">
-    <Header title="Play this game" description="Click the button to roll the dice"/>
+    {win&&<Confetti/>}
+    <Header title="Play this game" description={win ? "Congrats! You Won":"Click the button to roll the dice"}/>
       <div className="container">
       {dieArray}
       </div>
       <div className="button-div">
-      <button className="button" onClick={buttonClickHandler}>Roll</button>
+      <button className="button" onClick={win ? buttonClickHandler_Win : buttonClickHandler_NotWin}>{win ? "Reload" : "Roll" }</button>
       </div>
+      <Footer/>
     </div>
   )
 }
